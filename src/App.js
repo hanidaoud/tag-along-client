@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="flex bg-gray-100 min-h-screen">
       
-      <div className='hidden'>
+      <div >
         <Bulk />
       </div>
 
@@ -20,7 +20,7 @@ function App() {
       </div>
 
       {/* profile */}
-      <div >
+      <div className='hidden'>
         <Profile />
       </div>
 
