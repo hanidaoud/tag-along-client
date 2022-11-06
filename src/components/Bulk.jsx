@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import Agent from "./Agent";
 import img0 from '../media/0.jpg';
 import img1 from '../media/1.jpg';
@@ -7,18 +7,60 @@ import img3 from '../media/3.jpg';
 import img4 from '../media/4.jpg';
 import img5 from '../media/5.jpg';
 import img6 from '../media/6.png';
+import axios from "axios";
+import { data } from "autoprefixer";
+import { render } from "@testing-library/react";
 
 const Bulk = ()  => {
-    const lista = Array(100).fill(1)
+    const lista = Array(100).fill(1) //foo('http://192.168.122.89:6868/tags');
+    //const [lista, setLista] = useState(0);
+    /*axios({
+        method: 'get',
+        url: 'http://192.168.122.89:6868/tags'
+    })*/
+    let lista2 = Mapper();
+    console.log(1);
+    console.log(Object.values(lista2)[0]);
+    //console.log(lista2);
+    console.log(2);
+    console.log([1, 2, 3]);
+    Object.values(lista2)[0].map(x => console.log(x));
     return (
+
         <div className="bulk ml-20 pl-12 grid md:grid-cols-7 pt-4 bg-gray-100 right-0 mt-20">
-            {/*      Placeholders      
-            <div className="h-20 col-span-4"></div>
-            <div className="h-12 my-5 col-span-2 bg-taGreen mr-8 ml-1 rounded-lg"></div>
-            {/*      Agents            */}
-            {lista.map(x => <Agent st={['a', 'p', 'r'][Math.floor(Math.random()*3)]} sc={[img0, img1, img2, img3, img4, img5, img6][Math.floor(Math.random()*7)]} />)}
+            {/*fetch('http://192.168.122.89:6868/tags')
+            .then(res => res.json())
+            .then(json => console.log(json.data))
+            .then(json => json.data.map( 
+                <Agent st={['a', 'p', 'r'][Math.floor(Math.random()*3)]} 
+                sc={[img0, img1, img2, img3, img4, img5, img6][Math.floor(Math.random()*7)]} />))
+            .catch(err => console.error(err))*/}
+            {Object.values(lista2)[0].map(x => <Agent key="uniqu" st={['a', 'p', 'r'][Math.floor(Math.random()*3)]} 
+                sc={[img0, img1, img2, img3, img4, img5, img6][Math.floor(Math.random()*7)]}
+                /*name={Object.values(x)[1]}*/  />)}
         </div>
     )
 }
 
 export default Bulk;
+
+
+{/*      Agents            } 
+            {lista.map(x => <Agent key="uniqu" st={['a', 'p', 'r'][Math.floor(Math.random()*3)]} 
+                sc={[img0, img1, img2, img3, img4, img5, img6][Math.floor(Math.random()*7)]}
+name={Object.values(x)[1]}  />)} */}
+
+function Mapper() {
+    const [liste, setListe] = useState([]);
+    useEffect(() => {
+        axios
+            .get('http://192.168.122.89:6868/tags')
+            .then(res => {
+                //console.log(res.data);
+                setListe(res.data);
+            })
+            .catch(err => console.error(err));
+    }, []);
+    //console.log(liste);
+    return liste;
+}

@@ -15,7 +15,7 @@ const Logs = () => {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600">
-                    {lista.map(x => <Tab nom='Iron' prenom='Maiden' etat={['Entrer', 'Sortir'][Math.floor(Math.random()*2)]} date='1/1/1' heure='23:58' />)}
+                    {lista.map(x => <Tab key="dsfsd" nom='Iron' prenom='Maiden' etat={['Entrer', 'Sortir'][Math.floor(Math.random()*2)]} date='1/1/1' heure='23:58' />)}
 
                 </tbody>
             </table>

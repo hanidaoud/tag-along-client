@@ -2,7 +2,7 @@ import React from "react";
 import gnu from '../media/gnu.png';
 import { useState } from "react";
 
-const Agent = ({st, sc}) => {
+const Agent = ({st, sc, name = 'Iron Maiden'}) => {
     const [isActive, setIsActive] = useState(false);
 
     const handleClick = event => {
@@ -11,10 +11,10 @@ const Agent = ({st, sc}) => {
     };
     // <div className={isActive ? 'agent-active' : 'agent'} onClick={handleClick}>
     return (
-        <div className={isActive ? 'agent-active' : ((st == 'p') ? 'agent-p' : ((st == 'a') ? 'agent-a' : 'agent-r'))} onClick={handleClick}>
+        <div className={isActive ? 'agent-active' : ((st === 'p') ? 'agent-p' : ((st === 'a') ? 'agent-a' : 'agent-r'))} onClick={handleClick}>
             <center>
             <Picture src={sc} className="flex-row" />
-            <h3 className='text-darkText flex-row py-3'>Iron Maiden</h3>
+            <h3 className='text-darkText flex-row py-3'>{name}</h3>
             <State status={st}/>
             </center>
         </div>
