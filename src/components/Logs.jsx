@@ -1,7 +1,7 @@
 import React from "react";
 
-const Logs = () => {
-    const lista = Array(100).fill(1)
+const Logs = (source, log_id, lname, fname, status, day, hour) => {
+    //const lista = Array(100).fill(1)
     return (
         <div className="ml-20 mt-20 h-max py-12 px-12">
             <table className="w-tab shadow-2xl">
@@ -15,7 +15,7 @@ const Logs = () => {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600">
-                    {lista.map(x => <Tab key="dsfsd" nom='Iron' prenom='Maiden' etat={['Entrer', 'Sortir'][Math.floor(Math.random()*2)]} date='1/1/1' heure='23:58' />)}
+                    {source.map(x => <Tab key={log_id} nom={lname} prenom={fname} etat={status} date={day} heure={hour} />)}
 
                 </tbody>
             </table>
@@ -25,13 +25,13 @@ const Logs = () => {
 
 const Tab = ({nom, prenom, etat, date, heure}) => {
     return (
-        <tr className={(etat == 'Entrer' ? 
+        <tr className={(etat == 1 ? 
             "h-16 border-y-2 hover:font-bold hover:text-taPlatinum hover:bg-taGreen group" : 
             "h-16 border-y-2 hover:font-bold hover:text-taPlatinum hover:bg-taRed group")}>
             <td className="px-8 py-auto border-r-0">{nom}</td>
             <td className="px-8 py-auto border-r-0">{prenom}</td>
             <td className="px-8 py-auto border-r-0 text-sm group-hover:text-base">
-                <div className={(etat == 'Entrer') ? "w-min px-2 py-0.5 rounded-3xl text-white bg-taGreen" : "w-min px-2 py-0.5 rounded-3xl text-white bg-taRed"}> 
+                <div className={(etat == 1) ? "w-min px-2 py-0.5 rounded-3xl text-white bg-taGreen" : "w-min px-2 py-0.5 rounded-3xl text-white bg-taRed"}> 
                     {etat}
                 </div>
             </td>
@@ -41,4 +41,4 @@ const Tab = ({nom, prenom, etat, date, heure}) => {
     )
 }
 
-export default Logs;
+export default Tab;

@@ -1,5 +1,5 @@
 import React from "react";
-import gnu from '../media/gnu.png';
+import gnu from '../media/default.png';
 import { useState } from "react";
 
 const Agent = ({st, sc, name = 'Iron Maiden'}) => {
