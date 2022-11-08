@@ -7,7 +7,7 @@ import Profile from './components/Profile';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
 import Agent from './components/Agent';
-import { data } from 'autoprefixer';
+import notification from './media/1.mp3'
 
 
 function App() {
@@ -19,8 +19,14 @@ function App() {
   }
   const [tags, setTags] = useState([]);
   const [logs, setLogs] = useState([]);
+
+  function play() {
+    new Audio(notification).play();
+  }
+
   useEffect(() => {
     console.log('useEffect runs');
+    play();
     axios
       .get('http://192.168.122.89:6868/tags')
       .then(res => setTags(Object.values(res.data)[0]))
@@ -30,6 +36,7 @@ function App() {
       .get('http://192.168.122.89:6868/logs')
       .then(res => setLogs(Object.values(res.data)[0]))
       .catch(err => console.error(err));
+    // notif
   },[webs]);
   //console.log(logs);
   logs.map(x => console.log(x))
