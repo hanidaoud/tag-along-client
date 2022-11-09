@@ -41,6 +41,14 @@
         transition-all duration-100
         hover:scale-105
     }
+    .sidebar-item {
+        @apply rounded-2xl h-12 w-12 py-3 text-taPlatinum bg-black mx-auto my-4 
+        hover:cursor-pointer hover:bg-taPlatinum hover:text-black hover:rounded-full
+    }
+    .sidebar-item-active {
+      @apply rounded-2xl h-12 w-12 py-3 bg-taPlatinum text-black mx-auto my-4 
+      hover:cursor-pointer
+    }
 }
 /* bg-[#44e883] border-[#0b441e] */
 .bulk {
@@ -48,7 +56,7 @@
 }
 
 .h-blank {
-    height: calc(100vh - 35rem);
+    height: calc(100vh - 30rem);
 }
 
 .text-2xs {

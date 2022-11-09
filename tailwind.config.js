@@ -10,6 +10,9 @@ module.exports = {
         taRed : '#f4476f',
         taGreen : '#08d5a2',
         taPlatinum : '#f7f7fe',
+      },
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
       }
     },
   },
