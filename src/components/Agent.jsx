@@ -11,7 +11,11 @@ const Agent = ({st, sc, name = 'Iron Maiden'}) => {
     };
     // <div className={isActive ? 'agent-active' : 'agent'} onClick={handleClick}>
     return (
-        <div className={isActive ? 'agent-active' : ((st === 'p') ? 'agent-p' : ((st === 'a') ? 'agent-a' : 'agent-r'))} onClick={handleClick}>
+        <div className={isActive ? 
+            ((st === 'p') ? 'agent-p-active' : ((st === 'a') ? 'agent-a-active' : 'agent-r-active')) : 
+            ((st === 'p') ? 'agent-p' : ((st === 'a') ? 'agent-a' : 'agent-r'))} 
+            onClick={handleClick}>
+
             <center>
             <Picture src={sc} className="flex-row" />
             <h3 className='text-darkText flex-row py-3'>{name}</h3>

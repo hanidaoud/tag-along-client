@@ -4,43 +4,57 @@
 
 
 @layer components {
-    .line {
-        @apply my-1 mx-auto w-[12.5rem] h-1 bg-[#c4d2ff] rounded border-0 md:my-12 dark:bg-gray-700 ;
-    }
-    .agent {
-        @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
-        hover:border-b-4 hover:border-[#0b1844] hover:bg-[#4459e8] hover:shadow-2xl hover:cursor-pointer
-        transition-all duration-100
-        hover:scale-105
-    }
-    .agent-r {
-        @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
-        hover:border-b-4 hover:border-[#0b1844] hover:bg-taOrange 
-        hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
-        transition-all duration-100
-        hover:scale-105
-    }
-    .agent-a {
-        @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
-        hover:border-b-4 hover:border-[#0b1844] hover:bg-taRed 
-        hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
-        transition-all duration-100
-        hover:scale-105
-    }
-    .agent-p {
-        @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
-        hover:border-b-4 hover:border-[#0b1844] hover:bg-taGreen 
-        hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
-        transition-all duration-100
-        hover:scale-105
-    }
-    .agent-active {
-        @apply h-56 w-52 bg-black border-gray-700 border-b-4 my-4
-        text-taPlatinum
-        rounded-2xl flex py-6 mx-4 shadow-2xl hover:cursor-pointer
-        transition-all duration-100
-        hover:scale-105
-    }
+  .line {
+      @apply my-1 mx-auto w-[12.5rem] h-1 bg-[#c4d2ff] rounded border-0 md:my-12 dark:bg-gray-700 ;
+  }
+  .agent {
+      @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
+      hover:border-b-4 hover:border-[#0b1844] hover:bg-[#4459e8] hover:shadow-2xl hover:cursor-pointer
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-r {
+      @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
+      hover:border-b-4 hover:border-[#0b1844] hover:bg-taOrange 
+      hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-a {
+      @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
+      hover:border-b-4 hover:border-[#0b1844] hover:bg-taRed 
+      hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-p {
+      @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
+      hover:border-b-4 hover:border-[#0b1844] hover:bg-taGreen 
+      hover:shadow-2xl hover:cursor-pointer hover:text-white hover:font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-r-active {
+      @apply h-56 w-52 my-4 rounded-2xl flex py-6 mx-4 
+      border-b-4 border-[#0b1844] bg-taOrange
+      shadow-2xl hover:cursor-pointer text-white font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-a-active {
+      @apply h-56 w-52 my-4 rounded-2xl flex py-6 mx-4 
+      border-b-4 border-[#0b1844] bg-taRed 
+      shadow-2xl hover:cursor-pointer text-white font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
+  .agent-p-active {
+      @apply h-56 w-52 my-4 rounded-2xl flex py-6 mx-4 
+      border-b-4 border-[#0b1844] bg-taGreen 
+      shadow-2xl hover:cursor-pointer text-white font-semibold
+      transition-all duration-100
+      hover:scale-105
+  }
     .sidebar-item {
         @apply rounded-2xl h-12 w-12 py-3 text-taPlatinum bg-black mx-auto my-4 
         hover:cursor-pointer hover:bg-taPlatinum hover:text-black hover:rounded-full
