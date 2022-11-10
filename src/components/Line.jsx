@@ -9,9 +9,9 @@ const Line = ({nom, prenom, etat, isrc}) => {
     };
     return (
         <tr className={(etat == 'Present' ? 
-            "h-16 border-y-2 font-bold hover:font-bold hover:text-taPlatinum hover:bg-taGreen group" : 
-            "h-16 border-y-2 font-bold hover:font-bold hover:text-taPlatinum hover:bg-taRed group")}>
-            <td className="px-8 py-4 border-r-0"><img src={isrc} className="rounded-3xl w-3/4 mx-auto shadow-md"></img></td>
+            "h-16 border-y-2 font-semibold dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum hover:bg-taGreen dark:hover:bg-taGreen group" : 
+            "h-16 border-y-2 font-semibold dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum hover:bg-taRed dark:hover:bg-taRed group")}>
+            <td className="px-8 py-4 border-r-0 grid grid-cols-3"><img src={isrc} className="rounded-3xl aspect-square mx-auto shadow-md col-start-2"></img></td>
             <td className="px-8 border-r-0">{nom}</td>
             <td className="px-8 border-r-0">{prenom}</td>
             <td className="px-8 border-r-0 text-sm group-hover:text-base">

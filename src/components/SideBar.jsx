@@ -32,7 +32,8 @@ const SideBar = () => {
             <Link to='/settings' onClick={() => setPage('/settings')} className="hover:cursor-default" >
                 <AiOutlineSetting className={page === '/settings' ? "sidebar-item-active": "sidebar-item"} />
             </Link>
-            <BsSun className="sidebar-item" onClick={handleMode} />
+            <BsSun className="sidebar-item dark:hidden" onClick={handleMode} />
+            <BsMoon className="sidebar-item hidden dark:inline pl-1" onClick={handleMode} />
             <AiOutlineLogout className="sidebar-item" />
         </div>
         
