@@ -37,16 +37,19 @@ const State = ({status}) => {
     return (
         <div className='flex px-6'>
             {(status === 'p') ? 
-            <div className='flex-col bg-taGreen rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>P</div> :
-            <div className='flex-col bg-taPlatinum text-black font-normal
+            <div className='flex-col bg-taGreen rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4] dark:border-taMidDark'>P</div> :
+            <div className='flex-col bg-taPlatinum text-black font-normal 
+                dark:bg-taMidDark dark:text-taPlatinum dark:border-taMidDark
                 rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>P</div> }
             {(status === 'a') ? 
-            <div className='flex-col bg-taRed rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>A</div> :
-            <div className='flex-col bg-taPlatinum text-black font-normal
+            <div className='flex-col bg-taRed rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4] dark:border-taMidDark'>A</div> :
+            <div className='flex-col bg-taPlatinum text-black font-normal 
+                dark:bg-taMidDark dark:text-taPlatinum dark:border-taMidDark
                 rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>A</div> }
             {(status === 'r') ? 
-            <div className='flex-col bg-taOrange rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>R</div> :
-            <div className='flex-col bg-taPlatinum text-black font-normal
+            <div className='flex-col bg-taOrange rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4] dark:border-taMidDark'>R</div> :
+            <div className='flex-col bg-taPlatinum text-black font-normal 
+                dark:bg-taMidDark dark:text-taPlatinum dark:border-taMidDark
                 rounded-full py-[6px] mx-2 w-10 h-10 border-2 border-[#ebf2f4]'>R</div> }
         </div>
     )

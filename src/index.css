@@ -12,7 +12,7 @@
       hover:border-b-4 hover:border-[#0b1844] hover:shadow-2xl hover:cursor-pointer 
       hover:text-white hover:font-semibold
       transition-all duration-100
-      hover:scale-105 dark:bg-taDark dark:text-white
+      hover:scale-105 dark:bg-taDark dark:text-white dark:border-[#0b1844]
   }
   .agent-active {
       @apply h-56 w-52 my-4 rounded-2xl flex py-6 mx-4 
