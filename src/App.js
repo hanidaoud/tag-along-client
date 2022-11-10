@@ -49,7 +49,7 @@ function App() {
     <div className="flex bg-gray-100 min-h-screen dark:bg-taMidDark">
       <Routes>
         <Route path='/' element={
-          <div className='bulk ml-20 pl-12 pt-4 right-0 mt-20 grid md:grid-cols-7'> {/*grid md:grid-cols-7*/}
+          <div className='bulk ml-20 pl-12 pt-4 right-0 mt-20 grid grid-cols-d'> {/*grid md:grid-cols-7*/}
             {tags.map(x => 
               <Agent key={x.uid} name={x.first_name + ' ' + x.last_name} st={x.present_status === 1 ? 'p' : 'a' } 
               sc={media[Math.floor(Math.random()*15)]}/>)}

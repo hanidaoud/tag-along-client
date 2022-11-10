@@ -11,7 +11,7 @@ const Line = ({nom, prenom, etat, isrc}) => {
         <tr className={(etat == 'Present' ? 
             "h-16 border-y-2 font-bold hover:font-bold hover:text-taPlatinum hover:bg-taGreen group" : 
             "h-16 border-y-2 font-bold hover:font-bold hover:text-taPlatinum hover:bg-taRed group")}>
-            <td className="px-8 py-4 border-r-0"><img src={isrc} className="h-64 rounded-3xl shadow-md"></img></td>
+            <td className="px-8 py-4 border-r-0"><img src={isrc} className="rounded-3xl w-3/4 mx-auto shadow-md"></img></td>
             <td className="px-8 border-r-0">{nom}</td>
             <td className="px-8 border-r-0">{prenom}</td>
             <td className="px-8 border-r-0 text-sm group-hover:text-base">

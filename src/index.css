@@ -125,3 +125,25 @@ table {
 .profile-info {
     height: calc(100% - 12rem);
 }
+
+@media screen and (max-width: 1920px) {
+  .grid-cols-d {grid-template-columns: repeat(7, minmax(0, 1fr));}
+}
+@media screen and (max-width: 1712px) {
+  .grid-cols-d {grid-template-columns: repeat(6, minmax(0, 1fr));}
+}
+@media screen and (max-width: 1504px) {
+  .grid-cols-d {grid-template-columns: repeat(5, minmax(0, 1fr));}
+}
+@media screen and (max-width: 1296px) {
+  .grid-cols-d {grid-template-columns: repeat(4, minmax(0, 1fr));}
+}
+@media screen and (max-width: 1088px) {
+  .grid-cols-d {grid-template-columns: repeat(3, minmax(0, 1fr));}
+}
+@media screen and (max-width: 880px) {
+  .grid-cols-d {grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+@media screen and (max-width: 674px) {
+  .grid-cols-d {grid-template-columns: repeat(1, minmax(0, 1fr));}
+}
