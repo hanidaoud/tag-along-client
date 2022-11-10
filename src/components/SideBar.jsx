@@ -9,9 +9,12 @@ import tag from '../media/tag-along.png'
 //<BsMoon className="rounded-2xl h-12 w-12 py-[14px] px-auto bg-black text-taPlatinum mx-auto my-4"/>
 import {Link, useLocation} from 'react-router-dom';
 import { useState } from "react";
+import useDarkMode from "../hooks/useDarkMode";
 
 const SideBar = () => {
     const [page, setPage] = useState(useLocation().pathname);
+    const [darkTheme, setDarkTheme] = useDarkMode();
+    const handleMode = () => setDarkTheme(!darkTheme);
     return (
 
         <div className="h-screen w-20 fixed bg-black flex flex-col">
@@ -29,7 +32,7 @@ const SideBar = () => {
             <Link to='/settings' onClick={() => setPage('/settings')} className="hover:cursor-default" >
                 <AiOutlineSetting className={page === '/settings' ? "sidebar-item-active": "sidebar-item"} />
             </Link>
-            <BsSun className={page === '/dark' ? "sidebar-item-active": "sidebar-item"}  />
+            <BsSun className="sidebar-item" onClick={handleMode} />
             <AiOutlineLogout className="sidebar-item" />
         </div>
         

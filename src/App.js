@@ -10,6 +10,7 @@ import Agent from './components/Agent';
 import notification from './media/1.mp3'
 import {I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11, I12, I13, I14, I15, Card} from './media/TFL'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Line from './components/Line';
 
 
 function App() {
@@ -45,10 +46,10 @@ function App() {
   logs.map(x => console.log(x))
   return (
     <Router>
-    <div className="flex bg-gray-100 min-h-screen">
+    <div className="flex bg-gray-100 min-h-screen dark:bg-taMidDark">
       <Routes>
         <Route path='/' element={
-          <div className='bulk ml-20 pl-12 pt-4 bg-gray-100 right-0 mt-20 grid md:grid-cols-7'> {/*grid md:grid-cols-7*/}
+          <div className='bulk ml-20 pl-12 pt-4 right-0 mt-20 grid md:grid-cols-7'> {/*grid md:grid-cols-7*/}
             {tags.map(x => 
               <Agent key={x.uid} name={x.first_name + ' ' + x.last_name} st={x.present_status === 1 ? 'p' : 'a' } 
               sc={media[Math.floor(Math.random()*15)]}/>)}
@@ -60,7 +61,7 @@ function App() {
       {/* logs */}
       <Route path='/logs' element={
       <div>
-      <div className="ml-20 mt-20 h-max py-12 px-12">
+        <div className="ml-20 mt-20 h-max py-12 px-12">
             <table className="w-tab shadow-2xl">
                 <thead className="shadow-md text-taPlatinum">
                     <tr className="h-12">
@@ -79,6 +80,27 @@ function App() {
             </table>
         </div>
       </div>} />
+
+      <Route path='/listview' element={
+        <div>
+        <div className="ml-20 mt-20 h-max py-12 px-12">
+            <table className="w-tab shadow-2xl">
+                <thead className="shadow-md text-taPlatinum">
+                    <tr className="h-12">
+                      <th className="px-8 w-1/4 border-r-0"></th>
+                        <th className="px-8 w-1/4 border-r-0">Nom</th>
+                        <th className="px-8 w-1/4 border-r-0">Prenom</th>
+                        <th className="px-8 w-1/4 border-r-0">Etat</th>
+                    </tr>
+                </thead>
+                <tbody className="text-gray-600">
+                    {tags.map(x => <Line key={x.uid} nom={x.last_name} prenom={x.first_name} etat={x.present_status === 1 ? 'Present' : 'Absent' } 
+                    isrc={media[Math.floor(Math.random()*15)]} />)}
+
+                </tbody>
+            </table>
+        </div>
+      </div>} />
       </Routes>
 
       <div className='hidden'>
@@ -87,7 +109,7 @@ function App() {
 
       <Sidebar />
 
-      <TopBar />
+      <TopBar view={true}/>
 
     </div>
     </Router>
