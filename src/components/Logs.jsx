@@ -26,8 +26,8 @@ const Logs = (source, log_id, lname, fname, status, day, hour) => {
 const Tab = ({nom, prenom, etat, date, heure}) => {
     return (
         <tr className={(etat == 1 ? 
-            "h-16 border-y-2 dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum hover:bg-taGreen dark:hover:bg-taGreen group" : 
-            "h-16 border-y-2 dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum hover:bg-taRed dark:hover:bg-taRed group")}>
+            "taLog hover:bg-taGreen dark:hover:bg-taGreen group" : 
+            "taLog hover:bg-taRed dark:hover:bg-taRed group")}>
             <td className="px-8 py-auto border-r-0">{nom}</td>
             <td className="px-8 py-auto border-r-0">{prenom}</td>
             <td className="px-8 py-auto border-r-0 text-sm group-hover:text-base">

@@ -31,6 +31,7 @@ function App() {
   useEffect(() => {
     console.log('useEffect runs');
     webs != "" ? play() : console.log('loading ...');
+    //console.log(webs.slice(40, 59));
     axios
       .get('http://192.168.122.89:6868/tags')
       .then(res => setTags(Object.values(res.data)[0]))
@@ -43,7 +44,7 @@ function App() {
     // notif
   },[webs]);
   //console.log(logs);
-  logs.map(x => console.log(x))
+  tags.map(x => console.log(x))
   return (
     <Router>
     <div className="flex bg-gray-100 min-h-screen dark:bg-taMidDark">
@@ -52,7 +53,8 @@ function App() {
           <div className='bulk ml-20 pl-12 pt-4 right-0 mt-20 grid grid-cols-d'> {/*grid md:grid-cols-7*/}
             {tags.map(x => 
               <Agent key={x.uid} name={x.first_name + ' ' + x.last_name} st={x.present_status === 1 ? 'p' : 'a' } 
-              sc={media[Math.floor(Math.random()*15)]}/>)}
+               sc={x.photo} ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} 
+               seed={Math.floor(parseInt(x.uid.split(' 0x').join('') % 10))} />)}
           </div>} />
       {/*<div>
         <Bulk />
@@ -95,7 +97,7 @@ function App() {
                 </thead>
                 <tbody className="text-gray-600">
                     {tags.map(x => <Line key={x.uid} nom={x.last_name} prenom={x.first_name} etat={x.present_status === 1 ? 'Present' : 'Absent' } 
-                    isrc={media[Math.floor(Math.random()*15)]} />)}
+                    isrc={media[Math.floor(Math.random()*15)]} ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} />)}
 
                 </tbody>
             </table>
@@ -111,6 +113,13 @@ function App() {
 
       <TopBar view={true}/>
 
+      <div className='bg-taPlatinum h-screen w-screen fixed hidden'>
+        <div className='mx-auto my-auto h-96 w-96 bg-taDark flex flex-col justify-between'>
+          <input placeholder='sssss'/>
+          <input placeholder='ffff'/>
+          <button className='bg-taGreen my-20 mx-8 h-16 rounded-md'>asdasdas</button>
+        </div>
+      </div>
     </div>
     </Router>
   );

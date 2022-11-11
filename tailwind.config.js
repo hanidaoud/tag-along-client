@@ -16,7 +16,10 @@ module.exports = {
         taMidDark: '#1e1e1e',
       },
       animation: {
-        'spin-slow': 'spin 2s linear infinite',
+        'spin-slow': 'spin 2s linear 1s',
+        'pulse-color-p': 'colorized-p 1s cubic-bezier(0.4, 0, 0.6, 1)',
+        'pulse-color-a': 'colorized-a 1s cubic-bezier(0.4, 0, 0.6, 1)',
+        'pulse-color-r': 'colorized-r 1s cubic-bezier(0.4, 0, 0.6, 1)',
       }
     },
   },

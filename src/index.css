@@ -7,6 +7,12 @@
   .line {
       @apply my-1 mx-auto w-[12.5rem] h-1 bg-[#c4d2ff] rounded border-0 md:my-12 dark:bg-gray-700 ;
   }
+  .taRow {
+    @apply h-16 border-y-2 font-semibold dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum
+  }
+  .taLog {
+    @apply h-16 border-y-2 dark:bg-taDark dark:text-taPlatinum hover:font-bold hover:text-taPlatinum
+  }
   .agent {
       @apply h-56 w-52 bg-white my-4 shadow-lg rounded-2xl flex py-6 mx-4 
       hover:border-b-4 hover:border-[#0b1844] hover:shadow-2xl hover:cursor-pointer 
@@ -146,4 +152,29 @@ table {
 }
 @media screen and (max-width: 674px) {
   .grid-cols-d {grid-template-columns: repeat(1, minmax(0, 1fr));}
+}
+
+
+@keyframes colorized-p {
+  0%   {@apply bg-taGreen/50;}
+  25%  {@apply bg-taGreen;}
+  50%  {@apply bg-taGreen/50;}
+  75%  {@apply bg-taGreen;}
+  100% {@apply bg-taGreen/50;}
+}
+
+@keyframes colorized-a {
+  0%   {@apply bg-taRed/50;}
+  25%  {@apply bg-taRed;}
+  50%  {@apply bg-taRed/50;}
+  75%  {@apply bg-taRed;}
+  100% {@apply bg-taRed/50;}
+}
+
+@keyframes colorized-r {
+  0%   {@apply bg-taOrange/50;}
+  25%  {@apply bg-taOrange;}
+  50%  {@apply bg-taOrange/50;}
+  75%  {@apply bg-taOrange;}
+  100% {@apply bg-taOrange/50;}
 }
