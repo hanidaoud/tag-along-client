@@ -12,7 +12,7 @@ function AutoPicture({seed = 0, letters}) {
             color == 6 ? 'bg-lime-300' : 
             color == 7 ? 'bg-green-300' : 
             color == 8 ? 'bg-yellow-300' : 
-            'bg-emerald-300'} h-full rounded-full flex font-normal text-3xl`} >
+            'bg-emerald-300'} h-full rounded-full flex font-normal text-3xl aspect-square`} >
             <span className="m-auto text-taDark">{letters}</span>
         </div>
   )

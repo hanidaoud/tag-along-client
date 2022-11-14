@@ -96,8 +96,9 @@ function App() {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600">
-                    {tags.map(x => <Line key={x.uid} nom={x.last_name} prenom={x.first_name} etat={x.present_status === 1 ? 'Present' : 'Absent' } 
-                    isrc={media[Math.floor(Math.random()*15)]} ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} />)}
+                    {tags.map(x => <Line key={x.uid} src={x.photo} nom={x.last_name} prenom={x.first_name} 
+                    etat={x.present_status === 1 ? 'Present' : 'Absent' } ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} 
+                    s={Math.floor(parseInt(x.uid.split(' 0x').join('') % 10))} />)}
 
                 </tbody>
             </table>
