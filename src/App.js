@@ -16,7 +16,7 @@ import Line from './components/Line';
 function App() {
   let media = [I1, I2, I3, I4, I5, I6, I7, I8, I9, I10, I11, I12, I13, I14, I15]
   const [webs, setWebs] = useState("");
-  const socket = new WebSocket('ws://192.168.122.89:6868');
+  const socket = new WebSocket('ws://192.168.0.185:6868');
   socket.onmessage = ({ data }) => {
     console.log('Message ws: ', data);
     setWebs(data)
@@ -33,12 +33,12 @@ function App() {
     webs != "" ? play() : console.log('loading ...');
     //console.log(webs.slice(40, 59));
     axios
-      .get('http://192.168.122.89:6868/tags')
+      .get('http://192.168.0.185:6868/tags')  //http://192.168.122.89:6868/tags
       .then(res => setTags(Object.values(res.data)[0]))
       .catch(err => console.error(err));
     // Logs
     axios
-      .get('http://192.168.122.89:6868/logs')
+      .get('http://192.168.0.185:6868/logs')   //http://192.168.122.89:6868/logs
       .then(res => setLogs(Object.values(res.data)[0]))
       .catch(err => console.error(err));
     // notif
@@ -53,7 +53,7 @@ function App() {
           <div className='bulk ml-20 pl-12 pt-4 right-0 mt-20 grid grid-cols-d'> {/*grid md:grid-cols-7*/}
             {tags.map(x => 
               <Agent key={x.uid} name={x.first_name + ' ' + x.last_name} st={x.present_status === 1 ? 'p' : 'a' } 
-               sc={x.photo} ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} 
+               sc={x.picture} ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} 
                seed={Math.floor(parseInt(x.uid.split(' 0x').join('') % 10))} />)}
           </div>} />
       {/*<div>
@@ -96,7 +96,7 @@ function App() {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600">
-                    {tags.map(x => <Line key={x.uid} src={x.photo} nom={x.last_name} prenom={x.first_name} 
+                    {tags.map(x => <Line key={x.uid} src={x.picture} nom={x.last_name} prenom={x.first_name} 
                     etat={x.present_status === 1 ? 'Present' : 'Absent' } ws={(x.uid === webs.slice(40, 59)) ? 1 : 0} 
                     s={Math.floor(parseInt(x.uid.split(' 0x').join('') % 10))} />)}
 
